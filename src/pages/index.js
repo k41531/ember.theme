@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
+import {SubtleBox, FloatBox, ElevatedBox} from "../components/ElevatedBox"
 
 // styles
 const Container = styled.div`
@@ -11,6 +12,20 @@ const Container = styled.div`
 `
 
 // data
+const Wrapper = styled.div`
+  --shadow-color: 0deg 0% 50%;
+  background-color: hsl(0deg 0% 95%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+`
+const BlueWrapper = styled(Wrapper)`
+  --shadow-color: 220deg 60% 50%;
+  background-color: hsl(220deg 100% 80%);
+`;
+
 
 // markup
 const IndexPage = () => {
@@ -27,9 +42,16 @@ const IndexPage = () => {
         <div>
         </div>
       </div>
-      <p>
-        This color palette is in development.
-      </p>
+      <div>
+        <p>
+          This color palette is in development.
+        </p>
+      <BlueWrapper>
+        <SubtleBox />
+        <FloatBox />
+        <ElevatedBox />
+      </BlueWrapper>
+      </div>
      </Container>
     </main>
   )
