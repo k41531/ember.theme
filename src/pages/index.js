@@ -1,30 +1,28 @@
 import * as React from "react"
 import styled from "styled-components"
-import {SubtleBox, FloatBox, ElevatedBox} from "../components/ElevatedBox"
+import {ColorBox, ElevatedBox} from "../components/ElevatedBox"
+import {COLORS} from "../constants"
 
 // styles
 const Container = styled.div`
   font-family: "Open Sans";
   margin: 3rem auto;
-  max-width: 600px;
+  max-width: 720px;
   display: grid;
   place-items: center;
 `
 
-// data
 const Wrapper = styled.div`
   --shadow-color: 0deg 0% 50%;
-  background-color: hsl(0deg 0% 95%);
+  background-color: hsl(${COLORS.light});
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 16px;
   padding: 32px;
 `
-const BlueWrapper = styled(Wrapper)`
-  --shadow-color: 220deg 60% 50%;
-  background-color: hsl(220deg 100% 80%);
-`;
+const BoxWrapper = styled.div`
+  --shadow-color: 0deg 0% 50%;
+`
 
 
 // markup
@@ -46,12 +44,25 @@ const IndexPage = () => {
         <p>
           This color palette is in development.
         </p>
-      <BlueWrapper>
-        <SubtleBox />
-        <FloatBox />
-        <ElevatedBox />
-      </BlueWrapper>
-      </div>
+      <Wrapper>
+        <ColorBox color={COLORS.red}/>
+        <ColorBox color={COLORS.green}/>
+        <ColorBox color={COLORS.blue}/>
+        <ColorBox color={COLORS.yellow}/>
+        <ColorBox color={COLORS.magenta}/>
+        <ColorBox color={COLORS.cyan}/>
+      </Wrapper>
+      <Wrapper>
+          <ColorBox color={COLORS.light}/>
+          <ColorBox color={COLORS.white}/>
+          <ColorBox color={COLORS.fog}/>
+      </Wrapper>
+      <Wrapper>
+          <ColorBox color={COLORS.dark}/>
+          <ColorBox color={COLORS.black}/>
+          <ColorBox color={COLORS.gray}/>
+      </Wrapper>
+        </div>
      </Container>
     </main>
   )
