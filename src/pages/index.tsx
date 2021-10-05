@@ -1,9 +1,14 @@
 import * as React from "react"
 import styled from "styled-components"
 import {ColorBox} from "../components/ElevatedBox"
+import Layout from "../components/Layout"
 import {COLORS} from "../constants"
 
 // styles
+const Heading = styled.h1`
+  font-family: "Open Sans";
+  font-style: bold;
+`
 const Container = styled.div`
   font-family: "Open Sans";
   margin: 3rem auto;
@@ -21,26 +26,28 @@ const Wrapper = styled.div`
   padding: 32px;
 `
 
-
 // markup
 const IndexPage = () => {
   return (
+  <Layout>
     <main>
      <Container>
       <title>Ember Theme</title>
-      <h1>
-        This is a color palette called "Ember."
-      </h1>
+      <Heading>
+        This is a color palette called <span style={{ color: COLORS.fire }}>"Ember"</span>.
+      </Heading>
 
       <div>
-        <h2> Colors </h2>
         <div>
         </div>
       </div>
       <div>
-        <p>
-          This color palette is in development.
+        <p style={{display:'grid', placeItems:'center'}}>
+          These color palettes are in development.
         </p>
+      <Wrapper>
+        <ColorBox color={COLORS.fire}/>
+      </Wrapper>
       <Wrapper>
         <ColorBox color={COLORS.red}/>
         <ColorBox color={COLORS.green}/>
@@ -62,6 +69,7 @@ const IndexPage = () => {
         </div>
      </Container>
     </main>
+  </Layout>
   )
 }
 
