@@ -16,6 +16,9 @@ export const COLORS = {
   blue: '#70afea',
   magenta: '#d66cca',
   cyan: '#8db1dc',
+
+  // fire
+  fire: '#e37148'
 };
 
 export const SIZES = [
