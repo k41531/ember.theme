@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
-import {ColorBox, ElevatedBox} from "../components/ElevatedBox"
+import {ColorBox} from "../components/ElevatedBox"
 import {COLORS} from "../constants"
 
 // styles
@@ -19,9 +19,6 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 16px;
   padding: 32px;
-`
-const BoxWrapper = styled.div`
-  --shadow-color: 0deg 0% 50%;
 `
 
 

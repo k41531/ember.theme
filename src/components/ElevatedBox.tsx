@@ -1,15 +1,15 @@
-import * as React from "react"
+import React from "react"
 import styled from "styled-components"
 
 // utils 
-const hex2hsl = (hex) => {
+const hex2hsl = (hex:string) => {
   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   let r = parseInt(result[1], 16);
   let g = parseInt(result[2], 16);
   let b = parseInt(result[3], 16);
   r /= 255; g /= 255; b /= 255;
     let max = Math.max(r, g, b), min = Math.min(r, g, b);
-    let h, s, l = (max + min) / 2;
+    let h:number, s:number, l:number = (max + min) / 2;
     if(max == min){
       h = s = 0; // achromatic
     }else{
@@ -63,7 +63,8 @@ const ElevatedBox = styled(Box)`
   height: 100px;
   box-shadow: ${ELEVATIONS.large};
 `
-const ColorBox = (props) => {
+
+const ColorBox = (props:{color:string}) => {
   const BoxWrapper = styled.div`
     --shadow-color: 0deg 0% 50%;
     --box-color: ${hex2hsl(props.color)};
