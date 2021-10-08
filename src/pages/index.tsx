@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
-import {ColorBox} from "../components/ElevatedBox"
+import {Subtle, ElevatedBox} from "../components/ElevatedBox"
 import Layout from "../components/Layout"
 import {COLORS} from "../constants"
 
@@ -8,6 +8,10 @@ import {COLORS} from "../constants"
 const Heading = styled.h1`
   font-family: "Open Sans";
   font-style: bold;
+  margin: 0;
+  width: 100%;
+  height: 70px;
+  --box-color: ${COLORS.black};
 `
 const Container = styled.div`
   font-family: "Open Sans";
@@ -15,6 +19,12 @@ const Container = styled.div`
   max-width: 720px;
   display: grid;
   place-items: center;
+`
+
+const HeadingContainer = styled.div`
+  display: flex;
+  height: 100%;
+  align-items: center;
 `
 
 const Wrapper = styled.div`
@@ -31,42 +41,42 @@ const IndexPage = () => {
   return (
   <Layout>
     <main>
-     <Container>
       <title>Ember Theme</title>
       <Heading>
-        This is a color palette called <span style={{ color: COLORS.fire }}>"Ember"</span>.
+        <Subtle>
+          <HeadingContainer>
+            <span style={{ color: COLORS.fire,textAlign:'center', padding: '0 1rem 0.5rem' }}>Ember</span>
+          </HeadingContainer>
+        </Subtle>
       </Heading>
+     <Container>
+      <div>
+      <Wrapper>
+        <ElevatedBox color={COLORS.fire}/>
+      </Wrapper>
+      <Wrapper>
+        <ElevatedBox color={COLORS.red}/>
+        <ElevatedBox color={COLORS.green}/>
+        <ElevatedBox color={COLORS.blue}/>
+        <ElevatedBox color={COLORS.yellow}/>
+        <ElevatedBox color={COLORS.magenta}/>
+        <ElevatedBox color={COLORS.cyan}/>
+      </Wrapper>
+      <Wrapper>
+          <ElevatedBox color={COLORS.light}/>
+          <ElevatedBox color={COLORS.white}/>
+          <ElevatedBox color={COLORS.fog}/>
+      </Wrapper>
+      <Wrapper>
+          <ElevatedBox color={COLORS.dark}/>
+          <ElevatedBox color={COLORS.black}/>
+          <ElevatedBox color={COLORS.gray}/>
+      </Wrapper>
 
-      <div>
-        <div>
-        </div>
+      <p style={{display:'grid', placeItems:'center'}}>
+        This color theme is in development.
+      </p>
       </div>
-      <div>
-        <p style={{display:'grid', placeItems:'center'}}>
-          These color palettes are in development.
-        </p>
-      <Wrapper>
-        <ColorBox color={COLORS.fire}/>
-      </Wrapper>
-      <Wrapper>
-        <ColorBox color={COLORS.red}/>
-        <ColorBox color={COLORS.green}/>
-        <ColorBox color={COLORS.blue}/>
-        <ColorBox color={COLORS.yellow}/>
-        <ColorBox color={COLORS.magenta}/>
-        <ColorBox color={COLORS.cyan}/>
-      </Wrapper>
-      <Wrapper>
-          <ColorBox color={COLORS.light}/>
-          <ColorBox color={COLORS.white}/>
-          <ColorBox color={COLORS.fog}/>
-      </Wrapper>
-      <Wrapper>
-          <ColorBox color={COLORS.dark}/>
-          <ColorBox color={COLORS.black}/>
-          <ColorBox color={COLORS.gray}/>
-      </Wrapper>
-        </div>
      </Container>
     </main>
   </Layout>

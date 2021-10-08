@@ -45,35 +45,72 @@ const ELEVATIONS = {
 }
 
 const Box = styled.div`
-  border-radius: 8px;
-  background: hsl(var(--box-color));
+  --shadow-color: 0deg 0% 50%;
+  background: var(--box-color);
+  border-radius: var(--border-radius);
 `
-const SubtleBox = styled(Box)`
-  width: 50px;
-  height: 50px;
+const Subtle = styled(Box)`
+  width: 100%;
+  height: 100%;
   box-shadow: ${ELEVATIONS.small};
 `
-const FloatBox = styled(Box)`
-  width: 70px;
-  height: 70px;
+const Float = styled(Box)`
+  width: 100%;
+  height: 100%;
   box-shadow: ${ELEVATIONS.medium};
 `
-const ElevatedBox = styled(Box)`
-  width: 100px;
-  height: 100px;
+const Elevate = styled(Box)`
+  width: 100%;
+  height: 100%;
   box-shadow: ${ELEVATIONS.large};
 `
+type Props = {
+  color: string,
+  width?: string,
+  height?: string,
+}
 
-const ColorBox = (props:{color:string}) => {
+const SubtleBox = ({color = 'inherit', width = '50px', height = '50px'}:Props) => {
   const BoxWrapper = styled.div`
-    --shadow-color: 0deg 0% 50%;
-    --box-color: ${hex2hsl(props.color)};
+    --border-radius: 8px;
+    --box-color: ${color};
+    width: ${width};
+    height: ${height};
   `
   return (
     <BoxWrapper>
-      <ElevatedBox />
+      <Subtle />
+    </BoxWrapper>
+  )
+}
+
+const FloatedBox = ({color = 'inherit', width = '70px', height = '70px'}:Props) => {
+  const BoxWrapper = styled.div`
+    --border-radius: 8px;
+    --box-color: ${color};
+    width: ${width};
+    height: ${height};
+  `
+  return (
+    <BoxWrapper>
+      <Elevate />
+    </BoxWrapper>
+  )
+}
+
+
+const ElevatedBox = ({color = 'inherit', width = '100px', height = '100px'}:Props) => {
+  const BoxWrapper = styled.div`
+    --border-radius: 8px;
+    --box-color: ${color};
+    width: ${width};
+    height: ${height};
+  `
+  return (
+    <BoxWrapper>
+      <Elevate />
     </BoxWrapper>
   )
 };
 
-export {SubtleBox, FloatBox, ElevatedBox, ColorBox}
+export {Subtle,SubtleBox, FloatedBox, Float, ElevatedBox}
