@@ -10,12 +10,12 @@ export const COLORS = {
   fog: '#d1d9c5',
 
   // colorfull
-  red: '#b07a78',
-  green: '#5abc8f',
-  yellow: '#bfa855',
-  blue: '#70afea',
-  magenta: '#d66cca',
-  cyan: '#8db1dc',
+  red: '#d0918e',
+  green: '#6aaf8f',
+  yellow: '#b8b17a',
+  blue: '#989dd0',
+  magenta: '#bd89b7',
+  cyan: '#81a4c1',
 
   // fire
   fire: '#e37148'
